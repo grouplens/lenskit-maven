@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <groupId>org.grouplens.lenskit</groupId>
+  <artifactId>lenskit-maven</artifactId>
+  <version>2.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>LensKit</name>
+  <description>Collaborative filtering toolkit from GroupLens Research</description>
+  <url>${lenskit.web.url}</url>
+  <organization>
+    <name>GroupLens Research</name>
+    <url>http://www.grouplens.org</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>LGPLv2+</name>
+      <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/grouplens/lenskit/issues</url>
+  </issueManagement>
+  <scm>
+    <connection>scm:git:http://github.com/grouplens/lenskit.git</connection>
+    <developerConnection>scm:git:git@github.com:grouplens/lenskit.git</developerConnection>
+    <url>http://github.com/grouplens/lenskit</url>
+    <tag>lenskit-2.0.5</tag>
+  </scm>
+
+  <properties>
+    <lenskit.web.url>http://lenskit.grouplens.org/maven-site/</lenskit.web.url>
+    <lenskit.web.path>${lenskit.web.url}</lenskit.web.path>
+  </properties>
+
+  <distributionManagement>
+    <site>
+      <id>lenskit.grouplens.org</id>
+      <name>LensKit web site</name>
+      <url>${lenskit.web.path}</url>
+    </site>
+  </distributionManagement>
+
+  <modules>
+    <module>lenskit-eval-maven-plugin</module>
+    <module>lenskit-archetype-simple-analysis</module>
+    <module>lenskit-archetype-fancy-analysis</module>
+  </modules>
+    
+</project>
