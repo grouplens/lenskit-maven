@@ -1,0 +1,29 @@
+language: java
+jdk:
+- oraclejdk7
+- openjdk6
+- oraclejdk8
+branches:
+  except:
+  - www
+cache:
+  apt: true
+  directories:
+  - $HOME/.m2/repository
+before_install:
+- sudo apt-get -q update
+- sudo apt-get -q install --no-install-recommends time graphviz r-base-core python-requests python-matplotlib python-pandas texlive-latex-base pandoc
+install:
+# download all dependencies
+- mvn --batch-mode --update-snapshots dependency:go-offline
+# undownload the project artifacts to declutter the build
+- mvn --batch-mode --quiet build-helper:remove-project-artifact
+script: ./etc/ci/ci-build.sh
+after_success:
+- ./etc/ci/maybe-deploy.sh
+env:
+  global:
+  # CI_DEPLOY_USER
+  - secure: E9+0/y+skwxsHtLMPwFnue34T26qvuEp/MJ6UCKatlPg0ybR3phgvaf5F2/jxnEyzRb+qbBfXrDUiv3GrVYALfr61gv9cizOQLIcxBTWZ6LPZm45L7fIdDetYa1s6GjoHZWG1ka8V7g7rShe1FpvFbg522e1k/8ln5ritVOB51c=
+  # CI_DEPLOY_PASSwORD
+  - secure: ab12VaHiOCVPWJOAtL+5VfBtk4buv56aeuxriwFE4kAQ+7Ip8/xitWbwoeJyCC1JVtQ+QLnqC6EpR/nLX42waIDAs4R57tO1mQefTfLw6jrdl/HMXCXrqJmjFDT/qu0DR/MyFOJBrmrgst/22Amdjb2NvptVfgKy+k2d/CVwECw=

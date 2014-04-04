@@ -6,7 +6,6 @@ cmd()
     case "$1" in
     -e) mode=exec; shift;;
     -d) dir="$2"; shift 2;;
-    -t) precmd=./etc/ci/tslines.pl; shift;;
     esac
 
     if [ "$mode" = exec ]; then
@@ -51,7 +50,7 @@ is_main_jdk()
 
 is_main_repo()
 {
-    if [ "$TRAVIS_REPO_SLUG" = "grouplens/lenskit" ]; then
+    if [ "$TRAVIS_REPO_SLUG" = "grouplens/lenskit-maven" ]; then
         return 0
     else
         return 1
