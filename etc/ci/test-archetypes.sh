@@ -2,10 +2,9 @@
 
 . etc/ci/ci-helpers.sh
 
-MLDATA_ZIP="$PWD/lenskit-integration-tests/target/data/ml100k.zip"
+MLDATA_ZIP="$PWD/data/ml-100k.zip"
 if [ ! -r "$MLDATA_ZIP" ]; then
     echo "No MovieLens data found." >&2
-    echo "This probably means the main build failed."
     exit 3
 fi
 

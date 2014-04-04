@@ -10,6 +10,7 @@ cache:
   apt: true
   directories:
   - $HOME/.m2/repository
+  - data
 before_install:
 - sudo apt-get -q update
 - sudo apt-get -q install --no-install-recommends time graphviz r-base-core python-requests python-matplotlib python-pandas texlive-latex-base pandoc
@@ -18,6 +19,7 @@ install:
 - mvn --batch-mode --update-snapshots dependency:go-offline
 # undownload the project artifacts to declutter the build
 - mvn --batch-mode --quiet build-helper:remove-project-artifact
+- ./etc/ci/fetch-mldata.sh
 script: ./etc/ci/ci-build.sh
 after_success:
 - ./etc/ci/maybe-deploy.sh
