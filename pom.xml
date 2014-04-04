@@ -14,8 +14,8 @@
   <version>2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>LensKit</name>
-  <description>Collaborative filtering toolkit from GroupLens Research</description>
+  <name>LensKit Maven support</name>
+  <description>Maven support for the LensKit recommender systems toolkit.</description>
   <url>${lenskit.web.url}</url>
   <organization>
     <name>GroupLens Research</name>
