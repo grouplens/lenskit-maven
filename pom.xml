@@ -57,5 +57,44 @@
     <module>lenskit-archetype-simple-analysis</module>
     <module>lenskit-archetype-fancy-analysis</module>
   </modules>
+
+  <build>
+    <plugins>
+      <!-- Format the licensing plugin -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <version>1.9.0</version>
+        <inherited>false</inherited>
+        <configuration>
+          <basedir>${basedir}</basedir>
+          <header>${basedir}/etc/header.txt</header>
+          <aggregate>true</aggregate>
+          <strictCheck>true</strictCheck>
+          <includes>
+            <include>*/src/**/*.java</include>
+            <include>*/src/**/*.groovy</include>
+          </includes>
+          <excludes>
+            <exclude>lenskit-archetype*/src/**</exclude>
+          </excludes>
+          <mapping>
+            <java>SLASHSTAR_STYLE</java>
+            <groovy>SLASHSTAR_STYLE</groovy>
+          </mapping>
+        </configuration>
+        <executions>
+          <execution>
+            <id>check-headers</id>
+            <inherited>false</inherited>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
     
 </project>
