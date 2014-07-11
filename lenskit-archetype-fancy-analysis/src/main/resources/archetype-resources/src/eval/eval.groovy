@@ -87,7 +87,7 @@ def useruser = algorithm("UserUser") {
     // override normalizer within the neighborhood finder
     // this makes it use a different normalizer (subtract user mean) for computing
     // user similarities
-    within(NeighborhoodFinder) {
+    within(NeighborFinder) {
         bind UserVectorNormalizer to BaselineSubtractingUserVectorNormalizer
         // override baseline to use user mean
         bind (UserMeanBaseline, ItemScorer) to GlobalMeanRatingItemScorer
