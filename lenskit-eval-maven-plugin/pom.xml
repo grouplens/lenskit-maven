@@ -47,12 +47,12 @@
     <dependency>
       <groupId>org.grouplens.lenskit</groupId>
       <artifactId>lenskit-core</artifactId>
-      <version>${project.version}</version>
+      <version>${lenskit.version}</version>
     </dependency>
     <dependency>
       <groupId>org.grouplens.lenskit</groupId>
       <artifactId>lenskit-eval</artifactId>
-      <version>${project.version}</version>
+      <version>${lenskit.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven</groupId>

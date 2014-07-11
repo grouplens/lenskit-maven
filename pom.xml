@@ -16,7 +16,7 @@
 
   <name>LensKit Maven support</name>
   <description>Maven support for the LensKit recommender systems toolkit.</description>
-  <url>${lenskit.web.url}</url>
+  <url>http://lenskit.org/lenskit-maven</url>
   <organization>
     <name>GroupLens Research</name>
     <url>http://www.grouplens.org</url>
@@ -30,27 +30,17 @@
   </licenses>
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/grouplens/lenskit/issues</url>
+    <url>https://github.com/lenskit/lenskit-maven/issues</url>
   </issueManagement>
   <scm>
-    <connection>scm:git:http://github.com/grouplens/lenskit.git</connection>
-    <developerConnection>scm:git:git@github.com:grouplens/lenskit.git</developerConnection>
-    <url>http://github.com/grouplens/lenskit</url>
-    <tag>lenskit-2.0.5</tag>
+    <connection>scm:git:http://github.com/lenskit/lenskit-maven.git</connection>
+    <developerConnection>scm:git:git@github.com:lenskit/lenskit-maven.git</developerConnection>
+    <url>http://github.com/lenskit/lenskit-maven</url>
   </scm>
 
   <properties>
-    <lenskit.web.url>http://lenskit.grouplens.org/maven-site/</lenskit.web.url>
-    <lenskit.web.path>${lenskit.web.url}</lenskit.web.path>
+    <lenskit.version>2.1</lenskit.version>
   </properties>
-
-  <distributionManagement>
-    <site>
-      <id>lenskit.grouplens.org</id>
-      <name>LensKit web site</name>
-      <url>${lenskit.web.path}</url>
-    </site>
-  </distributionManagement>
 
   <modules>
     <module>lenskit-eval-maven-plugin</module>
