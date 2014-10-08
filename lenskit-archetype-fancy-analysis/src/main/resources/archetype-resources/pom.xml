@@ -17,7 +17,7 @@
     <!-- The version of LensKit for your project -->
     <!-- Note that we use project.version to pick up the version from the 
          source tree this archetype is being built from. -->
-    <lenskit.version>${project.version}</lenskit.version>
+    <lenskit.version>${lenskit.version}</lenskit.version>
 
     <!-- The location of the Rscript executable. The default is to search 
          for Rscript in your PATH. If you need to override this, it should probably
@@ -81,7 +81,7 @@
       <plugin>
         <artifactId>lenskit-eval-maven-plugin</artifactId>
         <groupId>org.grouplens.lenskit</groupId>
-        <version>\${lenskit.version}</version>
+        <version>${project.version}</version>
         <extensions>true</extensions>
 
 	<!-- The default execution for the lenskit-eval-maven-plugin
